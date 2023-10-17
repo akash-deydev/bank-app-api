@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import fs from "fs";
+import path from "path";
 import userRoutes from "./routes/userRoutes.js";
 import transferRoutes from "./routes/transferRoutes.js";
 import connectToMongoDB from "./config/dbConnect.js";
@@ -9,8 +10,10 @@ import connectToMongoDB from "./config/dbConnect.js";
 dotenv.config();
 
 const certificateFile = fs.readFileSync(
-  "./5840EB732CC427B2743ECAA6439D7036.txt"
+  "./B7399AA2CF709F07271A319D8612F6ED.txt"
 );
+
+console.log();
 
 const PORT = process.env.PORT || 9000;
 
@@ -28,9 +31,9 @@ app.get("/", (req, res) => {
 });
 
 app.get(
-  "/.well-known/pki-validation/5840EB732CC427B2743ECAA6439D7036.txt",
+  "/.well-known/pki-validation/B7399AA2CF709F07271A319D8612F6ED.txt",
   (req, res) => {
-    res.sendFile(certificateFile);
+    res.sendFile(path.resolve("./B7399AA2CF709F07271A319D8612F6ED.txt"));
   }
 );
 
