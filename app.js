@@ -8,7 +8,7 @@ import connectToMongoDB from "./config/dbConnect.js";
 dotenv.config();
 
 const PORT = 8080;
-
+console.log();
 const app = express();
 
 connectToMongoDB();
