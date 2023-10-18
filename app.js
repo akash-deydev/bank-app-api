@@ -1,15 +1,10 @@
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 import userRoutes from "./routes/userRoutes.js";
 import transferRoutes from "./routes/transferRoutes.js";
 import connectToMongoDB from "./config/dbConnect.js";
 
-dotenv.config();
-
-console.log();
-
-const PORT = process.env.PORT || 9000;
+const PORT = 8080;
 
 const app = express();
 
